@@ -20,28 +20,32 @@ export class ListarComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    var proc = new Processo();
-    proc.numeroRegistro = '12345644';
-    proc.cpf = '12345678909'
+    // var proc = new Processo();
+    // proc.numeroRegistro = '12345644';
+    // proc.cpf = '12345678909'
 
-    this.processos.push(proc);
+    // this.processos.push(proc);
 
+    this.procService.getAll().subscribe(
+      processos => this.processos = processos
+    )
   }
 
   cadastrar(){
     this.router.navigate(['/processos/cadastrar'])
   }
   
-  ver(numeroProcesso: number){
+  ver(numeroProcesso: string){
     // this.router.navigate(['/processos/editar'])
   }
 
-  editar(numeroProcesso: number){
+  editar(numeroProcesso: string){
     this.router.navigate(['/processos/editar'])
   }
 
-  apagar(numeroProcesso: number){
-    // this.router.navigate(['/processos/editar'])
+  apagar(numeroProcesso: string){
+    this.processos = this.processos.filter(p => p.numeroRegistro !== numeroProcesso);
+    this.procService.delete(numeroProcesso).subscribe();
   }
 
 }

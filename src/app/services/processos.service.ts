@@ -16,16 +16,16 @@ export class ProcessosService {
     return this.http.get<Processo[]>(`${BackEnd_API}/processos`);
   }
 
-  get(numeroProcesso: number) : Observable<Processo>{
+  get(numeroProcesso: string) : Observable<Processo>{
     return this.http.get<Processo>(`${BackEnd_API}/processo/${numeroProcesso}`);
   }
 
-  delete(numeroProcesso: number): Observable<any> {
+  delete(numeroProcesso: string): Observable<any> {
     return this.http.delete<Processo>(`${BackEnd_API}/processo/${numeroProcesso}`);
   }
 
   update(processo : Processo): Observable<any> {
-    return this.http.put(`${BackEnd_API}/processos`, processo);
+    return this.http.put(`${BackEnd_API}/processo`, processo);
   }
 
   create(processo: Processo): Observable<Processo> {

@@ -7,7 +7,7 @@ import { EditComponent } from './processo/edit/edit.component';
 
 const routes: Routes = [
   { path: 'processos/cadastrar', component: CadastroComponent, title: 'Cadastrar processo' },
-  { path: 'processos/editar', component: EditComponent, title: 'Editar processo' },
+  { path: 'processos/editar/:numeroRegistro', component: EditComponent, title: 'Editar processo' },
   { path: 'processos', component: ListarComponent, title: 'Processos' },
   { path: '', redirectTo: '/processos', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

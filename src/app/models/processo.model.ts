@@ -1,7 +1,7 @@
 export class Processo {
-    numeroRegistro: string;
+    numeroRegistro!: string;
     data: Date;
-    cpf: string;
+    cpf!: string;
 
     constructor(model?: Processo){
         this.numeroRegistro = model?.numeroRegistro ?? '';
