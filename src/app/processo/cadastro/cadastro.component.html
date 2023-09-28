@@ -1,0 +1,15 @@
+<h3>Cadastrar processo</h3>
+<form formGroup="processoForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="form-field">
+        <mat-label>Número de registro</mat-label>
+        <input matInput formControlName="numeroRegistro" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Data</mat-label>
+        <input matInput formControlName="data" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>UF</mat-label>
+        <input matInput formControlName="uf" required>
+    </mat-form-field>
+</form>

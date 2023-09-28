@@ -1,0 +1,10 @@
+table {
+    width: 100%;
+  }
+
+.divTable{
+    width: 90%;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
